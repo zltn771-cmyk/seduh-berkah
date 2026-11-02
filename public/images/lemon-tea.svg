@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3C3617"/>
+      <stop offset="100%" stop-color="#1A1806"/>
+    </linearGradient>
+    <linearGradient id="tea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5A93C"/>
+      <stop offset="60%" stop-color="#B26C1E"/>
+      <stop offset="100%" stop-color="#7A3F0C"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" rx="16"/>
+  <!-- Glass Shadow -->
+  <ellipse cx="200" cy="235" rx="55" ry="15" fill="#121004" opacity="0.6"/>
+  <!-- Glass -->
+  <path d="M155 70 L168 220 Q200 230 232 220 L245 70 Z" fill="url(#tea)"/>
+  <!-- Lemon Slice on Rim -->
+  <circle cx="160" cy="70" r="28" fill="#F4D03F" stroke="#F1C40F" stroke-width="3"/>
+  <circle cx="160" cy="70" r="22" fill="#F9E79F"/>
+  <path d="M160 48 L160 92 M138 70 L182 70 M144 54 L176 86 M144 86 L176 54" stroke="#F4D03F" stroke-width="2"/>
+  <!-- Mint Leaf -->
+  <path d="M175 55 Q190 40 185 55 Q195 55 175 65 Z" fill="#2D5A43"/>
+  <!-- Ice cubes -->
+  <rect x="180" y="90" width="26" height="24" rx="4" fill="#FFFFFF" opacity="0.5" transform="rotate(-10 180 90)"/>
+  <text x="200" y="270" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8DBCB" text-anchor="middle" letter-spacing="1">FRESH CITRUS JASMINE</text>
+</svg>

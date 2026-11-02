@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A1C1C"/>
+      <stop offset="100%" stop-color="#1A0C0C"/>
+    </linearGradient>
+    <linearGradient id="choco" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7B3F00"/>
+      <stop offset="50%" stop-color="#542A0C"/>
+      <stop offset="100%" stop-color="#361706"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" rx="16"/>
+  <!-- Glass Shadow -->
+  <ellipse cx="200" cy="235" rx="55" ry="15" fill="#140808" opacity="0.6"/>
+  <!-- Glass -->
+  <path d="M155 70 L168 220 Q200 230 232 220 L245 70 Z" fill="url(#choco)"/>
+  <!-- Chocolate Drizzle -->
+  <path d="M162 90 Q175 140 168 180" stroke="#2B1004" stroke-width="6" fill="none" opacity="0.7"/>
+  <path d="M238 95 Q225 150 232 195" stroke="#2B1004" stroke-width="5" fill="none" opacity="0.7"/>
+  <!-- Ice cubes -->
+  <rect x="180" y="80" width="28" height="24" rx="4" fill="#FFFFFF" opacity="0.5" transform="rotate(15 180 80)"/>
+  <text x="200" y="270" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8DBCB" text-anchor="middle" letter-spacing="1">SIGNATURE CHOCOLATE</text>
+</svg>
