@@ -6,7 +6,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useApp } from '@/lib/context';
 import { signInUser } from '@/services/auth.service';
 import { Coffee, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 function LoginFormContent() {
   const router = useRouter();
@@ -91,9 +90,9 @@ function LoginFormContent() {
         <div className="flex items-center justify-between text-xs">
           <span className="font-bold text-[#2C1810] flex items-center gap-1.5">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
-            Akun Demo Otentikasi
+            Pilih Cepat Akun
           </span>
-          <SimulationBadge size="sm" />
+          <span className="text-[10px] text-gray-500 font-medium">Uji Akses Cepat</span>
         </div>
         <div className="grid grid-cols-3 gap-2">
           <button

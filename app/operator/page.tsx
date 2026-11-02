@@ -25,7 +25,6 @@ import {
   XCircle,
   Sparkles,
 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 export default function OperatorDashboardPage() {
   const {
@@ -219,9 +218,11 @@ export default function OperatorDashboardPage() {
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-bold text-[#2C1810] uppercase tracking-wider">
-                OPERATIONAL &amp; POS SYSTEM (MUDHARIB)
+                OPERASIONAL &amp; KASIR POS
               </span>
-              <SimulationBadge />
+              <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-amber-200 uppercase tracking-wider">
+                Sistem Terhubung
+              </span>
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold text-white">
               Sistem Operasional &amp; Kasir Kedai

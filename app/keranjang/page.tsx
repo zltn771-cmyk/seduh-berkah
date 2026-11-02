@@ -21,7 +21,6 @@ import {
   Check,
   Sparkles,
 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 export function CartPage() {
   const router = useRouter();
@@ -99,7 +98,10 @@ export function CartPage() {
               <CheckCircle2 className="h-9 w-9" />
             </div>
 
-            <SimulationBadge label="PESANAN TERCATAT RESMI" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-[#2D5A43] px-3.5 py-1 text-xs font-bold shadow-2xs">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+              Pesanan Terkonfirmasi
+            </span>
 
             <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#2C1810] mt-3">
               Pesanan Sedang Disiapkan!

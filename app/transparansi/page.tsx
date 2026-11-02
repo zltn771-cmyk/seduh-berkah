@@ -19,7 +19,6 @@ import {
   Eye,
   Info,
 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 export default function TransparencyPage() {
   const { donationDistributions, donationSummary } = useApp();
@@ -39,10 +38,9 @@ export default function TransparencyPage() {
         {/* Header Hero */}
         <div className="rounded-3xl border border-[#E8DBCB] bg-gradient-to-r from-[#2D5A43] via-[#244b37] to-[#1a3828] text-white p-8 sm:p-12 shadow-sm relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-xs">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3.5 py-1 text-xs font-semibold backdrop-blur-xs">
               <ShieldCheck className="h-4 w-4 text-emerald-300" />
               <span>Portal Transparansi Publik Amanah Sedekah</span>
-              <SimulationBadge />
             </div>
 
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
@@ -144,7 +142,10 @@ export default function TransparencyPage() {
                 Dokumen resmi yang telah diperiksa dan disahkan oleh Takmir Masjid Kampus Universitas Bengkulu.
               </p>
             </div>
-            <SimulationBadge label="DOKUMEN SIMULASI RESMI" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-[#2D5A43] px-3 py-1 text-xs font-bold">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+              Dokumen Terverifikasi
+            </span>
           </div>
 
           {publicDistributions.length === 0 ? (

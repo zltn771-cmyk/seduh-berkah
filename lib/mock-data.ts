@@ -17,7 +17,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 2500,
     description: 'Seduhan tubruk atau filter klasik dari 100% biji Robusta Kepahiang Bengkulu dengan karakter tebal dan aroma cokelat pekat.',
     isAvailable: true,
-    image: '/images/kopi-hitam.svg',
+    image: '/images/kopi-hitam.jpg',
     tag: 'Klasik Kampus',
   },
   {
@@ -29,7 +29,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 5500,
     description: 'Espresso Robusta Bengkulu berpadu susu segar gurih dan manis lembut gula aren murni lokal Curup. Menu favorit mahasiswa.',
     isAvailable: true,
-    image: '/images/kopi-susu.svg',
+    image: '/images/kopi-susu.jpg',
     tag: 'Terlaris ★',
   },
   {
@@ -41,7 +41,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 3100,
     description: 'Double shot Robusta dingin yang bersih dan menyegarkan. Sangat pas menemani belajar dan diskusi siang hari.',
     isAvailable: true,
-    image: '/images/es-americano.svg',
+    image: '/images/es-americano.jpg',
     tag: 'Segar & Fokus',
   },
   {
@@ -53,7 +53,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 4800,
     description: 'Robusta espresso dipadukan dengan steamed milk lembut berbusa halus. Menghangatkan suasana sejuk seusai shalat ashar atau maghrib.',
     isAvailable: true,
-    image: '/images/latte-hangat.svg',
+    image: '/images/latte-hangat.jpg',
     tag: 'Hangat Nikmat',
   },
   {
@@ -65,7 +65,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 4000,
     description: 'Racikan cokelat kental berkualitas tinggi dipadukan dengan susu segar. Pilihan manis dan menenangkan bagi yang tidak minum kopi.',
     isAvailable: true,
-    image: '/images/es-cokelat.svg',
+    image: '/images/es-cokelat.jpg',
     tag: 'Pilihan Manis',
   },
   {
@@ -77,7 +77,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     hpp: 3500,
     description: 'Seduhan teh melati lokal berpadu perasan sari lemon asli yang menyegarkan pikiran dan dahaga saat jeda kuliah.',
     isAvailable: true,
-    image: '/images/lemon-tea.svg',
+    image: '/images/lemon-tea.jpg',
     tag: 'Penyegar Alami',
   },
 ];

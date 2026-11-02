@@ -5,9 +5,9 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'SEDUH BERKAH — Kopi Robusta Bengkulu & Ekosistem Digital Masjid Kampus UNIB',
+  title: 'SEDUH BERKAH — Kopi Robusta Asli Bengkulu | Masjid Kampus UNIB',
   description:
-    'Platform digital pendukung operasional kedai kopi Robusta Bengkulu berbasis akad mudharabah dan transparansi sedekah produktif di lingkungan Masjid Kampus Universitas Bengkulu.',
+    'Nikmati cita rasa khas kopi Robusta Bengkulu pilihan petani Kepahiang & Rejang Lebong. Hadir hangat, nikmat, dan terjangkau di serambi Masjid Kampus Universitas Bengkulu.',
 };
 
 export default function RootLayout({

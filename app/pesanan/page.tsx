@@ -18,7 +18,6 @@ import {
   Bell,
   Check,
 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 export default function OrderTrackingPage() {
   const { orders, myOrderNumbers, currentUser } = useApp();
@@ -89,7 +88,10 @@ export default function OrderTrackingPage() {
               <span className="text-xs font-bold text-[#8E5230] uppercase tracking-wider">
                 Status Antrean Langsung
               </span>
-              <SimulationBadge />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-[#2D5A43] px-2.5 py-0.5 text-[10px] font-bold">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Live Update
+              </span>
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#2C1810]">
               Pelacak &amp; Antrean Pesanan

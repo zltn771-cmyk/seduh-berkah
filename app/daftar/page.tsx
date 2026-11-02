@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signUpCustomer } from '@/services/auth.service';
 import { Coffee, ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 
 export default function RegisterPage() {
   const router = useRouter();

@@ -27,7 +27,6 @@ import {
   ChevronRight,
   Filter,
 } from 'lucide-react';
-import { SimulationBadge } from '@/components/shared/SimulationBadge';
 import { PeriodFilter } from '@/services/financial.service';
 
 export default function TakmirDashboardPage() {
@@ -177,9 +176,11 @@ export default function TakmirDashboardPage() {
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider">
-                PANEL TAKMIR (SHAHIBUL MAAL)
+                PENGAWASAN TAKMIR (SHAHIBUL MAAL)
               </span>
-              <SimulationBadge />
+              <span className="rounded-full bg-emerald-300/20 text-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                Audit Aktif
+              </span>
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold">
               Pengawasan Finansial, Mudharabah &amp; Sedekah
