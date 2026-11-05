@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useApp } from '@/lib/context';
 import { formatRupiah, formatDateOnly } from '@/lib/utils';
 import {
@@ -12,6 +13,7 @@ import {
   Settings,
   AlertOctagon,
   CheckCircle,
+  CheckCircle2,
   XCircle,
   FileText,
   Clock,
@@ -26,6 +28,7 @@ import {
   ChevronDown,
   ChevronRight,
   Filter,
+  ExternalLink,
 } from 'lucide-react';
 import { PeriodFilter } from '@/services/financial.service';
 
@@ -36,6 +39,7 @@ export default function TakmirDashboardPage() {
     nisbahHistory,
     currentDynamicReport,
     verifiedReports,
+    togglePublishReport,
     submitCurrentReport,
     verifyCurrentReport,
     rejectCurrentReport,
@@ -703,6 +707,46 @@ export default function TakmirDashboardPage() {
                     <div>
                       <span className="text-gray-500 text-[11px] block">Hak Pengelola ({report.nisbahOperator}%):</span>
                       <strong className="text-amber-900">{formatRupiah(report.operatorShare || report.mudharibShare || 0)}</strong>
+                    </div>
+                  </div>
+
+                  {/* Public Transparency Publishing Control */}
+                  <div className="pt-3 border-t border-gray-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10px] font-bold ${
+                        report.isPublishedToPublic
+                          ? 'bg-emerald-100 text-[#2D5A43] border border-emerald-300'
+                          : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        <CheckCircle2 className="h-3 w-3" />
+                        {report.isPublishedToPublic ? 'Terpublikasi di Portal Publik' : 'Draf Internal Takmir'}
+                      </span>
+                      {report.publishedAt && (
+                        <span className="text-[10px] text-gray-500">
+                          (Tayang: {formatDateOnly(report.publishedAt)})
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => togglePublishReport(report.id)}
+                        className={`px-3 py-1.5 rounded-xl font-bold text-xs transition-all shadow-2xs ${
+                          report.isPublishedToPublic
+                            ? 'bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300'
+                            : 'bg-[#2D5A43] text-white hover:bg-[#1E3F2F]'
+                        }`}
+                      >
+                        {report.isPublishedToPublic ? 'Tarik dari Publikasi' : 'Publikasikan ke Portal Publik'}
+                      </button>
+                      <Link
+                        href="/transparansi"
+                        target="_blank"
+                        className="px-3 py-1.5 rounded-xl bg-white border border-[#E8DBCB] text-gray-700 hover:bg-gray-50 font-semibold text-xs flex items-center gap-1"
+                      >
+                        <span>Lihat Portal Publik</span>
+                        <ExternalLink className="h-3 w-3 text-gray-400" />
+                      </Link>
                     </div>
                   </div>
                 </div>

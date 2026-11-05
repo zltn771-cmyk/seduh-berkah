@@ -287,6 +287,9 @@ export const INITIAL_FINANCIAL_REPORT: FinancialReport = {
   verifiedAt: '2026-11-01T09:30:00+07:00',
   verifiedBy: 'Ketua Dewan Takmir (Dr. Ir. H. Syamsul)',
   totalDonationPool: 600000, // Partisipasi 50% = 600 porsi x Rp1.000
+  isPublishedToPublic: true,
+  publishedAt: '2026-11-01 10:00:00',
+  publishedBy: 'Ketua Dewan Takmir (Dr. Ir. H. Syamsul)',
 };
 
 export const INITIAL_DONATION_DISTRIBUTIONS: DonationDistribution[] = [

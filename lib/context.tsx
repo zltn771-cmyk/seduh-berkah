@@ -110,6 +110,8 @@ interface AppContextType {
   setCustomEndDate: (date: string) => void;
   currentDynamicReport: FinancialReport;
   verifiedReports: FinancialReport[];
+  publishedReport: FinancialReport | null;
+  togglePublishReport: (reportId: string) => void;
   submitCurrentReport: () => void;
   verifyCurrentReport: (verifierName: string) => void;
   rejectCurrentReport: (notes: string) => void;
@@ -151,9 +153,11 @@ interface AppContextType {
     currentNetProfit: number;
     takmirShare: number;
     operatorShare: number;
+    totalBusinessCash: number;
     totalSedekahCollected: number;
     totalSedekahDisbursed: number;
     sedekahBalance: number;
+    totalRecordedFunds: number;
   };
 }
 
@@ -702,6 +706,30 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
+  const togglePublishReport = (reportId: string) => {
+    setVerifiedReports((prev) =>
+      prev.map((r) => {
+        if (r.id === reportId) {
+          const nextState = !r.isPublishedToPublic;
+          return {
+            ...r,
+            isPublishedToPublic: nextState,
+            publishedAt: nextState ? new Date().toISOString() : undefined,
+            publishedBy: nextState ? currentUser?.fullName || 'Takmir Masjid Kampus UNIB' : undefined,
+          };
+        }
+        return r;
+      })
+    );
+
+    addAuditLog(
+      'PUBLISH_FINANCIAL_REPORT',
+      `Status publikasi laporan ID ${reportId} diubah oleh ${currentUser?.fullName || 'Takmir'}.`
+    );
+  };
+
+  const publishedReport = verifiedReports.find((r) => r.isPublishedToPublic) || verifiedReports[0] || null;
+
   // SEDEKAH MANAGEMENT
   const donationSummary = calculateDonationSummary(orders, donationDistributions);
 
@@ -813,6 +841,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const takmirShare = currentNetProfit > 0 ? Math.floor(currentNetProfit * takmirRatio) : 0;
   const operatorShare = currentNetProfit > 0 ? currentNetProfit - takmirShare : 0;
 
+  const totalBusinessCash = totalRevenue - paidCosts;
+  const totalRecordedFunds = totalBusinessCash + donationSummary.balanceAvailable;
+
   return (
     <AppContext.Provider
       value={{
@@ -855,6 +886,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setCustomEndDate,
         currentDynamicReport,
         verifiedReports,
+        publishedReport,
+        togglePublishReport,
         submitCurrentReport,
         verifyCurrentReport,
         rejectCurrentReport,
@@ -878,9 +911,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           currentNetProfit,
           takmirShare,
           operatorShare,
+          totalBusinessCash,
           totalSedekahCollected: donationSummary.totalReceived,
           totalSedekahDisbursed: donationSummary.totalDisbursed,
           sedekahBalance: donationSummary.balanceAvailable,
+          totalRecordedFunds,
         },
       }}
     >

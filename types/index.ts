@@ -176,6 +176,9 @@ export interface FinancialReport {
   rejectionNotes?: string;
   revisionHistory?: Array<{ revisedAt: string; note: string; author: string }>;
   totalDonationPool?: number;
+  isPublishedToPublic?: boolean;
+  publishedAt?: string;
+  publishedBy?: string;
 }
 
 export interface AuditLog {
